@@ -35,13 +35,21 @@ public class PostController {
     public List<PostResponseDto> getPosts() {
         return postService.getPosts();
     }
-    @PostMapping("/posts")
+    @PostMapping("/post")
     public PostResponseDto createPost(@RequestBody PostRequestDto requestDto) {
         return postService.createPost(requestDto);
     }
-    @GetMapping("/posts/{id}")//이게 맞나......??????
+    @GetMapping("/post/{id}")//이게 맞나......??????
     public Long getPost(@PathVariable Long id) {
         return postService.getPost(id);
+    }
+    @PutMapping("/post/{id}")
+    public Long updateMemo(@PathVariable Long id, @RequestBody PostRequestDto requestDto) {
+        return postService.updatePost(id, requestDto);
+    }
+    @DeleteMapping("/post/{id}")
+    public Long deletePost(@PathVariable Long id) {
+        return postService.deletePost(id);
     }
 
 

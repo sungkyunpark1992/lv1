@@ -33,5 +33,11 @@ public class Post extends Timestamped{//왜 여기에 다른 변수가 다 있�
 
     }
 
+    public void update(PostRequestDto requestDto) {//PostService클래스에서 updatePost 메소드
+        this.title = requestDto.getTitle();
+        this.author = requestDto.getAuthor();
+        this.contents = requestDto.getContent();
+        this.password = requestDto.getPassword();
 
+    }
 }
